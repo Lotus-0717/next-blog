@@ -21,6 +21,7 @@ export const Post = defineDocumentType(() => ({
       of: { 
         type: 'string' 
       },
+      required: false 
     },
   },
   computedFields: {
