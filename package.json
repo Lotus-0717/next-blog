@@ -10,6 +10,8 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@react-spring/three": "^9.7.3",
+    "@react-three/fiber": "^8.13.6",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
@@ -24,6 +26,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
+    "three": "^0.155.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
