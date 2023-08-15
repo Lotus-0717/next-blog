@@ -3,7 +3,6 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 
 function PostCard(post: Post) {
-  console.log(post)
   return (
     <div className="mb-8 shadow-[0_0_10px_rgba(255,255,255,0.3)] rounded-md border-2 border-[#112222] p-[20px]">
       <h2 className="mb-1 text-xl">
@@ -15,8 +14,8 @@ function PostCard(post: Post) {
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       <p className="mb-2">
-        {post.tags?.map((tag) => (
-          <Link className="mr-1 text-blue-700 hover:text-blue-900 dark:text-blue-400" href={`/tags/${tag}`}>
+        {post.tags?.map((tag, idx) => (
+          <Link key={idx} className="mr-1 text-blue-700 hover:text-blue-900 dark:text-blue-400" href={`/tags/${tag}`}>
             {tag}
           </Link>
         ))}
@@ -37,7 +36,6 @@ export default function Home() {
       {posts.map((post: any, idx: any) => (
         <PostCard key={idx} {...post} />
       ))}
-      <Link href="/about">About</Link>
     </div>
   );
 }
